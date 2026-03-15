@@ -19,14 +19,17 @@ Before running anything, establish what UI changes should be validated:
 
 ## Steps
 
-1. **First run in session only** — skip this step if you have already run `verify-ui` earlier in this conversation:
-   - Call the XcodeBuildMCP `list_sims` tool and confirm at least one iOS 18+ simulator is available. If none are found, stop and tell the user to install an iOS 18+ simulator in Xcode before continuing.
+All tools below are using the `XcodeBuildMCP` tool.
 
-2. Call the XcodeBuildMCP `session_show_defaults` tool to confirm project, scheme, and simulator are set. If any are missing, stop and ask the user to configure them.
+1. **First run in session only** — skip if you have already run `verify-ui` earlier in this conversation:
+   - Call `list_sims` and confirm at least one iOS 18+ simulator exists. If none, stop and tell the user to install one in Xcode.
+   - From the iOS 18+ results, find any with state **Booted**. If exactly one is booted, call `session_set_defaults` to use it. If multiple are booted, show the list and ask the user to pick one, then call `session_set_defaults`. If none are booted, continue — `build_run_sim` will boot one.
 
-3. Call the XcodeBuildMCP `build_run_sim` tool to build and launch the app on the simulator.
+2. Call `session_show_defaults` to confirm project, scheme, and simulator are set. If any are missing, stop and ask the user to configure them.
 
-4. Call the XcodeBuildMCP `screenshot` tool to capture the current simulator screen.
+3. Call `build_run_sim` to build and launch the app on the simulator.
+
+4. Call `screenshot` to capture the current simulator screen.
 
 5. Evaluate the screenshot against the UI changes identified above. Use [docs/UI_CONVENTIONS.md](docs/UI_CONVENTIONS.md) as a reference for what correct UI looks like (layout, accessibility, visual distinction). Report the result:
    - **Pass**: The changes look correct — display the screenshot and briefly describe what was verified.
