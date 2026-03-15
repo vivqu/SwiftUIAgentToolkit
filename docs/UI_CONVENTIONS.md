@@ -1,6 +1,6 @@
 # UI Conventions
 
-Guidelines for building correct, accessible, and visually coherent SwiftUI views in this toolkit.
+Guidelines for building correct, accessible, and visually coherent Swift views in this toolkit.
 
 ## Layout
 

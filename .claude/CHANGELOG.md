@@ -33,8 +33,10 @@ Added the verification loop
 - Cleaned up the `docs/SETUP.md` file to be consistent
 - Added `.claude/skills/verify-ui`
 - Added `.claude/skills/verify-test`
+- Added `.claude/skills/verify` and extracted common setup to a separate shared `xcodebuildmcp-session-setup.md` file
 
 Tested the new skills
 
 - Ran a basic test to verify that adding UI works for `/verify-ui`
 - Added `docs/UI_CONVENTIONS.md` to capture common UI issues
+- Made plan to migrate to a plugin
