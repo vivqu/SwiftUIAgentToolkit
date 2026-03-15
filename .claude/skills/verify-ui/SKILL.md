@@ -28,7 +28,7 @@ Before running anything, establish what UI changes should be validated:
 
 4. Call the XcodeBuildMCP `screenshot` tool to capture the current simulator screen.
 
-5. Evaluate the screenshot against the UI changes identified above. Report the result:
+5. Evaluate the screenshot against the UI changes identified above. Use [docs/UI_CONVENTIONS.md](docs/UI_CONVENTIONS.md) as a reference for what correct UI looks like (layout, accessibility, visual distinction). Report the result:
    - **Pass**: The changes look correct — display the screenshot and briefly describe what was verified.
    - **Fail (build/launch)**: Build or launch failed — show the error output and stop.
-   - **Fail (visual)**: The app launched but the expected changes are not visible or look wrong — display the screenshot and describe specifically what appears incorrect.
+   - **Fail (visual or conventions)**: The app launched but the expected changes are not visible, look wrong, or violate UI conventions (e.g. unsafe layout, missing accessibility identifiers, insufficient contrast) — display the screenshot and describe specifically what is incorrect or non-compliant.

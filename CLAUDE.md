@@ -28,6 +28,14 @@ A cloneable template for quickly starting new iOS apps with SwiftUI. See [docs/S
 - Models: `Foo.swift` (plain struct/class names)
 - Extensions: `Foo+Bar.swift` (e.g., `Color+Brand.swift`)
 
+## UI Conventions
+
+Follow the guidelines in [docs/UI_CONVENTIONS.md](docs/UI_CONVENTIONS.md) for layout, accessibility, and visual distinction. Key rules:
+
+- Respect safe areas — never underlap the status bar or Dynamic Island
+- All interactive and visible UI elements must have `.accessibilityIdentifier` set
+- Verify sufficient contrast — never place white text on white backgrounds (or vice versa)
+
 ## Build & Test
 
 After making UI changes, use `/verify-ui` to build and run the app on the simulator, take a screenshot, and confirm the changes look correct.

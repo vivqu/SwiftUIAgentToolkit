@@ -31,3 +31,9 @@ Setup instructions
 Added the verification loop
 
 - Cleaned up the `docs/SETUP.md` file to be consistent
+- Added `.claude/skills/verify-ui`
+
+Tested the new skills
+
+- Ran a basic test to verify that adding UI works for `/verify-ui`
+- Added `docs/UI_CONVENTIONS.md` to capture common UI issues
