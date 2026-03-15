@@ -4,7 +4,7 @@
 
 - Claude Code - recommended coding agent
 - Cursor - recommended IDE (optional)
-- Xcode 16+
+- Xcode 18+
 - iOS 18+ deployment target
 - Swift 5.9+
 

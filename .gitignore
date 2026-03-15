@@ -5,6 +5,9 @@
 ## Test App for SwiftUIAgentToolkit
 TestSwiftUIApp/*
 
+## Internal development docs (not part of the template)
+docs/internal-dev/
+
 ## User settings
 xcuserdata/
 
