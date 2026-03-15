@@ -61,6 +61,23 @@ Verify the connection:
 claude mcp list
 ```
 
+**Cursor**:
+
+Add to `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "xcode": {
+      "command": "xcrun",
+      "args": ["mcpbridge"]
+    }
+  }
+}
+```
+
+Restart Cursor to pick it up. Verify the connection in **Cursor → Settings → MCP** — xcode should appear with a green checkmark.
+
 2. Setup XcodeBuildMCP
 
 This is a third-party tool that works with any Xcode version. The skills and plugins for SwiftUIAgentToolkit currently utilize this tool.
