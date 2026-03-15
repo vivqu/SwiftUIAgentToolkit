@@ -44,14 +44,18 @@ your mobile app.
 
 1. Setup Xcode MCP
 
-Apple ships a built-in MCP bridge starting in Xcode 26.3. It requires no separate installation — just register it with your agent.
+Apple ships a built-in MCP bridge starting in Xcode 26.3. It requires no separate installation.
 
 > **Note:** The Xcode MCP may be useful for working with SwiftUI Previews, which XcodeBuildMCP does not support.
+
+**Enable in Xcode first:**
+
+Open Xcode → **Settings (⌘,)** → **Intelligence** tab → toggle on **"Allow external agents to use Xcode tools"**
 
 **Claude Code**:
 
 ```bash
-claude mcp add --transport stdio xcode -- xcrun mcpbridge
+claude mcp add --transport stdio -s user xcode -- xcrun mcpbridge
 ```
 
 Verify the connection:
