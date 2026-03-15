@@ -38,7 +38,11 @@ Follow the guidelines in [docs/UI_CONVENTIONS.md](docs/UI_CONVENTIONS.md) for la
 
 ## Build & Test
 
-After making UI changes, use `/verify-ui` to build and run the app on the simulator, take a screenshot, and confirm the changes look correct.
+Three skills are available for verifying app correctness after code changes:
+
+- `/verify-ui` — Build and run the app on a simulator, take a screenshot, and confirm UI changes look correct. Use after any visual change.
+- `/verify-test` — Run the unit and UI test suite and report pass/fail results. Use after adding or changing logic with tests.
+- `/verify` — Full verification: runs both UI and test checks in sequence and reports a combined summary. Use when you want to confirm everything is working end to end.
 
 ## Internal Development
 

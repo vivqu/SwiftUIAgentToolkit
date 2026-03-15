@@ -21,21 +21,21 @@ When running tests you will see multiple app launches — this is normal and exp
 Before running anything, establish the test scope in priority order:
 
 1. **If `$ARGUMENTS` was provided**, use that as a test filter (passed via `extraArgs` as `-only-testing` to `test_sim`).
-2. **Otherwise, check for newly added tests** — run `git diff HEAD -- '**/*Tests*.swift'` and scan added lines (`+`) for new test function signatures matching `@Test func \w+` or `func test\w+`. If new test functions are found:
-   - Identify each function's enclosing class or struct name from the diff context.
-   - Infer the target name from the file path (e.g. a file under `FooTests/` belongs to target `FooTests`).
-   - Build `-only-testing` entries in the format `TargetName/ClassName/methodName` and pass them as `extraArgs` to `test_sim`. Example: `["-only-testing", "TestSwiftUIAppTests/TestSwiftUIAppTests/amPmColor_returnsBlueInMorning"]`.
-3. **If no new tests are found in the diff**, run the full test suite with no filter.
+2. **Otherwise, check for newly added tests**:
+   - Run `git diff HEAD -- '**/*Tests*.swift'` and scan added lines (`+`) for new test function signatures matching `@Test func \w+` or `func test\w+`.
+   - Run `git status --short` and check for any untracked `*Tests*.swift` files not yet in the diff — read those files directly to find test function signatures.
+   - Look back at the current conversation for any tests that were just written.
+   - If new test functions are found from any of the above sources:
+     - Identify each function's enclosing class or struct name.
+     - Infer the target name from the file path (e.g. a file under `FooTests/` belongs to target `FooTests`).
+     - Build `-only-testing` entries in the format `TargetName/ClassName/methodName` and pass them as `extraArgs` to `test_sim`. Example: `["-only-testing", "TestSwiftUIAppTests/TestSwiftUIAppTests/amPmColor_returnsBlueInMorning"]`.
+3. **If no new tests are found**, use the `AskUserQuestion` tool to ask: "No new tests detected — run the full test suite?" and wait for confirmation before proceeding. If they decline, stop.
 
 ## Steps
 
 All tools below are using the `XcodeBuildMCP` tool.
 
-1. **First run in session only** — skip if you have already run `verify-test` or `verify-ui` earlier in this conversation:
-   - Call `list_sims` and confirm at least one iOS 18+ simulator exists. If none, stop and tell the user to install one in Xcode.
-   - From the iOS 18+ results, find any with state **Booted**. If exactly one is booted, call `session_set_defaults` to use it. If multiple are booted, show the list and ask the user to pick one, then call `session_set_defaults`. If none are booted, continue — `test_sim` will boot one.
-   - Call `session_show_defaults`. If `projectPath` or `workspacePath` is missing, call `discover_projs` using the workspace root. If exactly one project or workspace is found, call `session_set_defaults` to set it. If multiple are found, show the list and ask the user to pick one. If none are found, stop and tell the user no Xcode project was found.
-   - If `scheme` is still missing after setting the project, call `list_schemes` and set the first result via `session_set_defaults`. If multiple schemes exist, show the list and ask the user to pick one.
+1. Follow [.claude/skills/shared/xcodebuildmcp-session-setup.md](.claude/skills/shared/xcodebuildmcp-session-setup.md) to ensure session defaults are configured.
 
 2. Call `session_show_defaults` to confirm project, scheme, and simulator are all set. If any are still missing, stop and ask the user to configure them.
 

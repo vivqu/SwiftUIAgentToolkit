@@ -11,21 +11,20 @@ Build and run the app on a simulator, take a screenshot, and verify the UI looks
 
 ## Determine what to verify
 
-Before running anything, establish what UI changes should be validated:
+Before running anything, establish what UI changes should be validated, in priority order:
 
-- If `$ARGUMENTS` was provided, use that as the description of what to verify.
-- Otherwise, look back at the current conversation and identify any UI changes that were just made (layout, colors, text, components, navigation, etc.).
-- If neither applies, just verify the app launches and renders without errors.
+1. **If `$ARGUMENTS` was provided**, use that as the description of what to verify.
+2. **Otherwise, scan for recent UI changes**:
+   - Run `git diff HEAD -- '**/*.swift'` and scan changed lines for modifications to View or layout code (SwiftUI views, modifiers, colors, text, navigation, etc.).
+   - Run `git status --short` and check for any untracked `.swift` files that may not yet appear in the diff.
+   - Look back at the current conversation for any UI changes that were just made.
+3. **If no changes are found**, just verify the app launches and renders without errors.
 
 ## Steps
 
 All tools below are using the `XcodeBuildMCP` tool.
 
-1. **First run in session only** — skip if you have already run `verify-ui` earlier in this conversation:
-   - Call `list_sims` and confirm at least one iOS 18+ simulator exists. If none, stop and tell the user to install one in Xcode.
-   - From the iOS 18+ results, find any with state **Booted**. If exactly one is booted, call `session_set_defaults` to use it. If multiple are booted, show the list and ask the user to pick one, then call `session_set_defaults`. If none are booted, continue — `build_run_sim` will boot one.
-   - Call `session_show_defaults`. If `projectPath` or `workspacePath` is missing, call `discover_projs` using the workspace root. If exactly one project or workspace is found, call `session_set_defaults` to set it. If multiple are found, show the list and ask the user to pick one. If none are found, stop and tell the user no Xcode project was found.
-   - If `scheme` is still missing after setting the project, call `list_schemes` and set the first result via `session_set_defaults`. If multiple schemes exist, show the list and ask the user to pick one.
+1. Follow [.claude/skills/shared/xcodebuildmcp-session-setup.md](.claude/skills/shared/xcodebuildmcp-session-setup.md) to ensure session defaults are configured.
 
 2. Call `session_show_defaults` to confirm project, scheme, and simulator are all set. If any are still missing, stop and ask the user to configure them.
 
