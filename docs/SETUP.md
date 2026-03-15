@@ -91,7 +91,3 @@ MyAppProject/
 ├── .claude/
 └── docs/
 ```
-
-## Running Tests
-
-In Xcode: `Cmd+U`

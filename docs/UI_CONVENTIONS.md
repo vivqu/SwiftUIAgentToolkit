@@ -20,3 +20,18 @@ Guidelines for building correct, accessible, and visually coherent SwiftUI views
 - When building or reviewing UI, use the simulator screenshot to confirm elements are actually visible, not just present in the view hierarchy.
 - Avoid relying solely on color to convey meaning; pair with iconography or labels for accessibility.
 - **Exception**: If the user explicitly requests a color combination that results in low or no contrast (e.g. white text on white background), implement it as asked but emit a warning: e.g. `⚠️ Warning: this text will be invisible on a white background — intentional per your request.`
+
+## Light/Dark Mode
+
+- Use adaptive semantic colors instead of hardcoded `Color.white` or `Color.black` — prefer SwiftUI's `.primary`, `.secondary`, `Color(.systemBackground)`, `Color(.label)`, etc.
+- Adaptive colors automatically adjust for light/dark mode and high-contrast accessibility settings.
+- When building custom color assets, always define both light and dark variants in the asset catalog.
+
+## When to Write a UI Test
+
+Use `verify-ui` (screenshot) for appearance — layout, spacing, contrast, typography. Write a UI test when correctness matters:
+
+- An element **must be present** for the feature to function (buttons, banners, empty states)
+- UI visibility **depends on state or data** (logged in/out, empty vs. populated list)
+- A **user interaction produces a result** that needs to be verified (tap → navigate, tap → change)
+- An accessibility identifier is already set — if presence matters, assert it

@@ -24,8 +24,10 @@ All tools below are using the `XcodeBuildMCP` tool.
 1. **First run in session only** — skip if you have already run `verify-ui` earlier in this conversation:
    - Call `list_sims` and confirm at least one iOS 18+ simulator exists. If none, stop and tell the user to install one in Xcode.
    - From the iOS 18+ results, find any with state **Booted**. If exactly one is booted, call `session_set_defaults` to use it. If multiple are booted, show the list and ask the user to pick one, then call `session_set_defaults`. If none are booted, continue — `build_run_sim` will boot one.
+   - Call `session_show_defaults`. If `projectPath` or `workspacePath` is missing, call `discover_projs` using the workspace root. If exactly one project or workspace is found, call `session_set_defaults` to set it. If multiple are found, show the list and ask the user to pick one. If none are found, stop and tell the user no Xcode project was found.
+   - If `scheme` is still missing after setting the project, call `list_schemes` and set the first result via `session_set_defaults`. If multiple schemes exist, show the list and ask the user to pick one.
 
-2. Call `session_show_defaults` to confirm project, scheme, and simulator are set. If any are missing, stop and ask the user to configure them.
+2. Call `session_show_defaults` to confirm project, scheme, and simulator are all set. If any are still missing, stop and ask the user to configure them.
 
 3. Call `build_run_sim` to build and launch the app on the simulator.
 

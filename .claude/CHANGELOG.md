@@ -32,6 +32,7 @@ Added the verification loop
 
 - Cleaned up the `docs/SETUP.md` file to be consistent
 - Added `.claude/skills/verify-ui`
+- Added `.claude/skills/verify-test`
 
 Tested the new skills
 
