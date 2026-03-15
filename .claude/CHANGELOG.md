@@ -28,6 +28,6 @@ Setup instructions
 - Added Xcode project setup information
 - Added XcodeBuildMCP tool configuration steps
 
-Tested the verification loop
+Added the verification loop
 
 - Cleaned up the `docs/SETUP.md` file to be consistent

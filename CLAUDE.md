@@ -30,7 +30,7 @@ A cloneable template for quickly starting new iOS apps with SwiftUI. See [docs/S
 
 ## Build & Test
 
-In Xcode: `Cmd+B` to build, `Cmd+U` to run tests.
+After making UI changes, use `/verify-ui` to build and run the app on the simulator, take a screenshot, and confirm the changes look correct.
 
 ## Internal Development
 
