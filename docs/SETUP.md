@@ -114,6 +114,15 @@ Install in the Cursor global user config at `~/.cursor/mcp.json`. This will enab
 
 Restart Cursor to pick it up. Verify the connection in **Cursor → Settings → MCP** — XcodeBuildMCP should appear with a green checkmark.
 
+3. Install the `ios-verify-ui` plugin
+
+This plugin provides the `/ios-verify-ui:verify-ui`, `/ios-verify-ui:verify-test`, and `/ios-verify-ui:verify` commands used to verify your app after code changes.
+
+```bash
+/plugin marketplace add vivqu/ios-verify-ui-plugin
+/plugin install ios-verify-ui
+```
+
 ## Project Structure
 
 After setup your folder should look like:

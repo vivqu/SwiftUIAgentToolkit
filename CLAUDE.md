@@ -38,11 +38,15 @@ Follow the guidelines in [docs/UI_CONVENTIONS.md](docs/UI_CONVENTIONS.md) for la
 
 ## Build & Test
 
-Three skills are available for verifying app correctness after code changes:
+Three commands are available for verifying app correctness after code changes. They are provided by the [ios-verify-ui plugin](https://github.com/vivqu/claude-swift-verify-ui-plugin) — install it with:
 
-- `/verify-ui` — Build and run the app on a simulator, take a screenshot, and confirm UI changes look correct. Use after any visual change.
-- `/verify-test` — Run the unit and UI test suite and report pass/fail results. Use after adding or changing logic with tests.
-- `/verify` — Full verification: runs both UI and test checks in sequence and reports a combined summary. Use when you want to confirm everything is working end to end.
+```bash
+claude plugin add https://github.com/vivqu/claude-swift-verify-ui-plugin
+```
+
+- `/ios-verify-ui:verify-ui` — Build and run the app on a simulator, take a screenshot, and confirm UI changes look correct. Use after any visual change.
+- `/ios-verify-ui:verify-test` — Run the unit and UI test suite and report pass/fail results. Use after adding or changing logic with tests.
+- `/ios-verify-ui:verify` — Full verification: runs both UI and test checks in sequence and reports a combined summary. Use when you want to confirm everything is working end to end.
 
 ## Internal Development
 
