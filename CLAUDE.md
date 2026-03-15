@@ -4,13 +4,12 @@ A toolkit for bootstrapping SwiftUI mobile apps — designed for rapid, vibe-cod
 
 ## Project Purpose
 
-Provides reusable components, patterns, and utilities to quickly scaffold production-quality iOS apps with SwiftUI.
+A cloneable template for quickly starting new iOS apps with SwiftUI. See [docs/SETUP.md](docs/SETUP.md) for how to create an Xcode project inside this template.
 
 ## Architecture
 
 - **Swift 5.9+ / SwiftUI** — No UIKit unless absolutely necessary
 - **Minimum deployment target**: iOS 18+
-- **Package management**: Swift Package Manager (no CocoaPods)
 - **Architecture pattern**: MVVM with `@Observable` macro (not `ObservableObject`)
 
 ## Coding Standards
@@ -31,11 +30,4 @@ Provides reusable components, patterns, and utilities to quickly scaffold produc
 
 ## Build & Test
 
-```bash
-# Build via Xcode or:
-xcodebuild -scheme SwiftUIAgentToolkit -destination 'platform=iOS Simulator,name=iPhone 16'
-
-# Run tests:
-xcodebuild test -scheme SwiftUIAgentToolkitTests -destination 'platform=iOS Simulator,name=iPhone 16'
-```
-
+In Xcode: `Cmd+B` to build, `Cmd+U` to run tests.

@@ -10,30 +10,39 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vivqu/SwiftUIAgentToolkit.git
-   cd SwiftUIAgentToolkit
+   git clone https://github.com/vivqu/SwiftUIAgentToolkit.git MyAppName
+   cd MyAppName
    ```
 
-2. Open in Xcode:
+2. Open Xcode and create a new project inside this folder:
+   - Open Xcode → **File → New → Project**
+   - Choose **App** under iOS
+   - Set your **Product Name**, **Bundle Identifier**, and **Team**
+   - Set **Interface** to SwiftUI and **Language** to Swift
+   - When prompted to save, **navigate to your cloned folder** and save the `.xcodeproj` there
+
+3. Set the deployment target:
+   - Select your project in the Xcode navigator
+   - Under **General → Minimum Deployments**, set iOS to **18.0**
+
+4. Open the project:
    ```bash
-   open SwiftUIAgentToolkit.xcodeproj
-   ```
-   Or if using Swift Package Manager:
-   ```bash
-   open Package.swift
+   open YourApp.xcodeproj
    ```
 
-3. Select a simulator target (iPhone 16 or later) and build with `Cmd+B`.
+## Project Structure
 
-## Dependencies
-
-Dependencies are managed with Swift Package Manager. Xcode will resolve them automatically on first build.
+After setup your folder should look like:
+```
+MyAppName/
+├── YourApp.xcodeproj
+├── YourApp/
+│   └── (generated Swift source files)
+├── CLAUDE.md
+├── .claude/
+└── docs/
+```
 
 ## Running Tests
 
 In Xcode: `Cmd+U`
-
-Or from the command line:
-```bash
-xcodebuild test -scheme SwiftUIAgentToolkitTests -destination 'platform=iOS Simulator,name=iPhone 16'
-```
