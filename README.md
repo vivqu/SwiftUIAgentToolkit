@@ -4,9 +4,9 @@ A cloneable template for bootstrapping SwiftUI iOS apps — designed for rapid, 
 
 ## What's included
 
-- **`CLAUDE.md`** — Coding standards, architecture rules, and naming conventions baked in as agent instructions. Any AI coding agent (Claude Code, Cursor, etc.) will follow these automatically.
+- **`CLAUDE.md`** — Coding standards, architecture rules, and naming conventions baked in as agent instructions.
 - **`docs/SETUP.md`** — Step-by-step guide to create a new Xcode project inside this template and configure the agent verification tools.
-- **`ios-verify-ui` plugin** — Claude Code skills to build, screenshot, and test your app directly from the agent. See [Build & Verify](#build--verify) below.
+- **`ios-verify-ui` plugin** — Claude Code skills to build, test, and visually verify your app directly from the agent. See [Build & Verify](#build--verify) below.
 
 ## Requirements
 
