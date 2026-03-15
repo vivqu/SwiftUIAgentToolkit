@@ -46,3 +46,5 @@ Migrated to `ios-verify-ui` plugin
 - Published verify skills as a standalone Claude Code plugin at [vivqu/claude-swift-verify-ui-plugin](https://github.com/vivqu/claude-swift-verify-ui-plugin)
 - Removed `.claude/skills/` directory (verify-ui, verify-test, verify, and shared session setup)
 - Updated `CLAUDE.md` to reference plugin commands (`/ios-verify-ui:verify-ui`, `/ios-verify-ui:verify-test`, `/ios-verify-ui:verify`) and include install instructions
+
+Updated the README
