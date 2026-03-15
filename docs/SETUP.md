@@ -19,6 +19,8 @@
    - Choose **App** under iOS
    - Set your **Product Name**, **Bundle Identifier**, and **Team**
    - Set **Interface** to SwiftUI and **Language** to Swift
+   - Set **Testing System** to Swift Testing with XCTest UI Tests
+   - Choose SwiftData for **Storage**
    - When prompted to save, **navigate to your cloned folder** and save the `.xcodeproj` there
 
 3. Set the deployment target:
@@ -34,9 +36,9 @@
 
 After setup your folder should look like:
 ```
-MyAppName/
-├── YourApp.xcodeproj
+MyAppProject/
 ├── YourApp/
+|   ├── YourApp.xcodeproj
 │   └── (generated Swift source files)
 ├── CLAUDE.md
 ├── .claude/

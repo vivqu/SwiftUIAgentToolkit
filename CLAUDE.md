@@ -31,3 +31,7 @@ A cloneable template for quickly starting new iOS apps with SwiftUI. See [docs/S
 ## Build & Test
 
 In Xcode: `Cmd+B` to build, `Cmd+U` to run tests.
+
+## Reserved Names
+
+- **`TestSwiftUIApp`** is reserved and must not be used as a new app name. It is listed in `.gitignore` and is used internally to validate the correctness of the SwiftUIAgentToolkit project itself.

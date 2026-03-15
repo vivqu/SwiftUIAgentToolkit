@@ -15,3 +15,6 @@ Initial Setup
 Decided to make this project a Github Template 
 - Chose Github template rather than a Swift Package (SPM) library because we are providing top-level agent direction. Also decided not to use `xcodegen` because it may require custom knowledge and prompting, which can be done simply through the Xcode workflow
 - Created `docs/SETUP.md` to give installation instructions.
+
+Created test app
+- Added `TestSwiftUIApp/*` files to .gitignore
