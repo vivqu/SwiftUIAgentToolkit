@@ -1,2 +1,2 @@
 # SwiftUIAgentToolkit
-Basic toolkit to bootstrap vibe-coding mobile apps
+Basic toolkit to bootstrap vibe-coding for mobile apps
