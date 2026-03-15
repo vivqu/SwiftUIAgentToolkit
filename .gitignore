@@ -19,6 +19,9 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+## Linter
+.markdownlint.json
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace

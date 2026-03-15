@@ -43,7 +43,27 @@ This section describes how to set up the tools
 to enable the agent to verify the correctness of
 your mobile app.
 
-1. Setup XcodeBuildMCP
+1. Setup Xcode MCP
+
+Apple ships a built-in MCP bridge starting in Xcode 26.3. It requires no separate installation — just register it with your agent.
+
+> **Note:** The Xcode MCP may be useful for working with SwiftUI Previews, which XcodeBuildMCP does not support.
+
+**Claude Code**:
+
+```bash
+claude mcp add --transport stdio xcode -- xcrun mcpbridge
+```
+
+Verify the connection:
+
+```bash
+claude mcp list
+```
+
+2. Setup XcodeBuildMCP
+
+This is a third-party tool that works with any Xcode version. The skills and plugins for SwiftUIAgentToolkit currently utilize this tool.
 
 [XcodeBuildMCP](https://github.com/cameroncooke/XcodeBuildMCP) lets AI coding agents build and run your app directly.
 
