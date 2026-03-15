@@ -18,8 +18,7 @@ If using Cursor, we recommend these extensions:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/vivqu/SwiftUIAgentToolkit.git MyAppName
-   cd MyAppName
+   git clone https://github.com/vivqu/SwiftUIAgentToolkit.git
    ```
 
 2. Download and install Xcode
