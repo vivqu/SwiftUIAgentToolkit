@@ -61,22 +61,21 @@ Repeat for each image needed. The project uses `PBXFileSystemSynchronizedRootGro
 
 ## Step 3 — SwiftUI usage
 
+### Sizing images
+
+Use `.scaledToFill()` by default — it fills the container and clips overflow. Override with `.scaledToFit()` when the full image must be visible without cropping.
+
 ```swift
 // Bundled image
-Image("avatar-illustrated-1")
+Image("avatar-1")
     .resizable()
-    .aspectRatio(contentMode: .fill)
-
-// Bundled avatar in a circle
-Image("avatar-illustrated-1")
-    .resizable()
-    .aspectRatio(contentMode: .fill)
+    .scaledToFill()
     .frame(width: 80, height: 80)
     .clipShape(Circle())
 
 // Fallback: picsum (network — use when no bundled image fits the category)
 AsyncImage(url: URL(string: "https://picsum.photos/seed/UNIQUE_SEED/300/300")!) { image in
-    image.resizable().aspectRatio(contentMode: .fill)
+    image.resizable().aspectRatio(contentMode: .fit)
 } placeholder: {
     Color(.systemGray5)
 }
@@ -91,25 +90,25 @@ RoundedRectangle(cornerRadius: 12)
 
 Common needs in prototype UI:
 
-| Use case         | Symbol name        |
-|------------------|--------------------|
-| User / avatar    | `person.circle.fill` |
-| Location         | `location.fill`    |
-| Photo            | `photo`            |
-| Clothing         | `tshirt`           |
-| Electronics      | `laptopcomputer`   |
-| Books            | `book`             |
-| Food             | `fork.knife`       |
-| Sports           | `figure.run`       |
-| Home             | `house`            |
-| Beauty           | `sparkles`         |
-| Toys / games     | `gamecontroller`   |
-| Settings         | `gearshape`        |
-| Notifications    | `bell`             |
-| Search           | `magnifyingglass`  |
-| Favorites        | `heart`            |
-| Shopping         | `bag`              |
-| Star / rating    | `star.fill`        |
-| Calendar         | `calendar`         |
-| Map              | `map`              |
-| Camera           | `camera`           |
+| Use case | Symbol name |
+| --- | --- |
+| User / avatar | `person.circle.fill` |
+| Location | `location.fill` |
+| Photo | `photo` |
+| Clothing | `tshirt` |
+| Electronics | `laptopcomputer` |
+| Books | `book` |
+| Food | `fork.knife` |
+| Sports | `figure.run` |
+| Home | `house` |
+| Beauty | `sparkles` |
+| Toys / games | `gamecontroller` |
+| Settings | `gearshape` |
+| Notifications | `bell` |
+| Search | `magnifyingglass` |
+| Favorites | `heart` |
+| Shopping | `bag` |
+| Star / rating | `star.fill` |
+| Calendar | `calendar` |
+| Map | `map` |
+| Camera | `camera` |
