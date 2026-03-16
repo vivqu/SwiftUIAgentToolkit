@@ -11,7 +11,7 @@ Use this skill whenever you're building a prototype screen that needs images. Pr
 
 | Need                         | Approach                                              |
 |------------------------------|-------------------------------------------------------|
-| Person / avatar              | Bundled illustrated avatar                            |
+| Person / avatar              | Bundled avatar — ask user which style (see Step 1)    |
 | Product, hero, or landscape  | Bundled image if available → picsum fallback          |
 | Category or action indicator | SF Symbol (see reference below)                       |
 | Loading / skeleton state     | `.redacted(reason: .placeholder)`                     |
@@ -21,6 +21,20 @@ Use this skill whenever you're building a prototype screen that needs images. Pr
 Read `assets/placeholder-images/README.md` — it lists every available image by category with filenames and descriptions.
 
 If a category has no images yet, use the picsum fallback (see Step 3).
+
+### When multiple styles exist for a category, ask the user
+
+After reading the README, if the category has more than one style (e.g. avatars have both **illustrated** and **photo** variants), pause and ask the user which style they prefer before proceeding. For example:
+
+> There are two avatar styles available:
+>
+> - **Illustrated** (`placeholder-avatar-illustrated-1` … `placeholder-avatar-illustrated-6`) — cartoon personas
+> - **Photo** (`placeholder-avatar-1` … `placeholder-avatar-3`) — realistic portraits
+>
+>
+> Which style would you like to use?
+
+Do not pick a style silently — the choice affects the visual tone of the whole screen.
 
 ## Step 2 — Import into Assets.xcassets
 

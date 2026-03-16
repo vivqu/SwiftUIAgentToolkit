@@ -6,7 +6,8 @@ Curated images for use in Swift prototypes. Drop images into the appropriate cat
 
 | Category | Names | Count | Use for |
 | -------- | ----- | ----- | ------- |
-| Avatar / portrait | `placeholder-avatar-illustrated-1.png` … `placeholder-avatar-illustrated-6.png` | 6 | Profile photos, user avatars, social UI |
+| Avatar / portrait (illustrated) | `placeholder-avatar-illustrated-1.png` … `placeholder-avatar-illustrated-6.png` | 6 | Profile photos, user avatars, social UI |
+| Avatar / portrait (photo) | `placeholder-avatar-1.jpg` … `placeholder-avatar-3.jpg` | 3 | Realistic profile photos, social UI |
 
 ## Rules
 
@@ -16,6 +17,10 @@ Curated images for use in Swift prototypes. Drop images into the appropriate cat
 ## Sources
 
 - **Avatars:** Illustrated personas from [Personas by Draftbit](https://personas.draftbit.com/)
+
+## Optimization
+
+Images have been minified using [TinyPNG](https://tinypng.com/).
 
 ## Folders
 
