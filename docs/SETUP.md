@@ -42,46 +42,9 @@ This section describes how to set up the tools
 to enable the agent to verify the correctness of
 your mobile app.
 
-1. Setup Xcode MCP
+> **SwiftUI Previews**: If you want the agent to render SwiftUI Previews, set up the Xcode MCP bridge (Xcode 26.3+ only). See the `/xcode-bridge` skill for setup instructions and usage.
 
-Apple ships a built-in MCP bridge starting in Xcode 26.3. It requires no separate installation.
-
-> **Note:** The Xcode MCP may be useful for working with SwiftUI Previews, which XcodeBuildMCP does not support.
-
-**Enable in Xcode first:**
-
-Open Xcode → **Settings (⌘,)** → **Intelligence** tab → toggle on **"Allow external agents to use Xcode tools"**
-
-**Claude Code**:
-
-```bash
-claude mcp add --transport stdio -s user xcode -- xcrun mcpbridge
-```
-
-Verify the connection:
-
-```bash
-claude mcp list
-```
-
-**Cursor**:
-
-Add to `~/.cursor/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "xcode": {
-      "command": "xcrun",
-      "args": ["mcpbridge"]
-    }
-  }
-}
-```
-
-Restart Cursor to pick it up. Verify the connection in **Cursor → Settings → MCP** — xcode should appear with a green checkmark.
-
-2. Setup XcodeBuildMCP
+1. Setup XcodeBuildMCP
 
 This is a third-party tool that works with any Xcode version. The skills and plugins for SwiftUIAgentToolkit currently utilize this tool.
 
@@ -118,7 +81,7 @@ Install in the Cursor global user config at `~/.cursor/mcp.json`. This will enab
 
 Restart Cursor to pick it up. Verify the connection in **Cursor → Settings → MCP** — XcodeBuildMCP should appear with a green checkmark.
 
-3. Install the `ios-verify-ui` plugin
+2. Install the `ios-verify-ui` plugin
 
 This plugin provides the `/ios-verify-ui:verify-ui`, `/ios-verify-ui:verify-test`, and `/ios-verify-ui:verify` commands used to verify your app after code changes.
 
