@@ -6,9 +6,16 @@ Decision history for the SwiftUIAgentToolkit repository.
 
 ## 2026-03-16
 
+Completed placeholder UI asset library
+
+- Added 6 photo avatars, 10 product images, 6 hero images (3 nature + 3 architecture), and 6 abstract/background images from [Unsplash](https://unsplash.com/)
+- Updated `assets/placeholder-images/README.md` with final counts, corrected filenames (no `placeholder-` prefix), and Unsplash source attribution
+- Updated `placeholder-ui` skill decision guide to list all categories as bundled (no picsum fallback needed)
+- Updated `README.md` with a Prototyping section listing available image categories
+
 Added placeholder UI assets for prototyping
 
-- Created `assets/placeholder-images/` with category subfolders (`avatars/`, `heroes/`, `products/`, `abstracts/`)
+- Created `assets/placeholder-images/` with category subfolders (`avatars/`, `heroes/`, `products/`, `abstract/`)
 - Added 6 illustrated avatar images from [Personas by Draftbit](https://personas.draftbit.com/)
 - Created `assets/placeholder-images/README.md` with naming convention and sources
 - Added `.claude/skills/placeholder-ui/` skill with decision guide, asset import steps, SwiftUI snippets, and SF Symbols reference

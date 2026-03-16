@@ -48,6 +48,20 @@ claude plugin add https://github.com/vivqu/claude-swift-verify-ui-plugin
 | `/ios-verify-ui:verify-test` | After adding or changing logic with tests — runs the full unit and UI test suite |
 | `/ios-verify-ui:verify` | Full check — runs both UI and test verification in sequence |
 
+## Prototyping
+
+When building screens that need realistic-looking placeholder content, use the `/placeholder-ui` skill. It provides bundled images across four categories — no network required:
+
+| Category | Count | Use for |
+| --- | --- | --- |
+| Avatars (illustrated) | 6 | Profile photos, social UI |
+| Avatars (photo) | 6 | Realistic portrait UI |
+| Products | 10 | Product cards, shop listings |
+| Heroes (nature + architecture) | 6 | Full-width banners, feature headers |
+| Abstracts | 6 | Decorative backgrounds, empty states |
+
+The skill handles importing images into `Assets.xcassets` and includes SF Symbol references for prototype icons.
+
 ## Architecture
 
 This template enforces a consistent SwiftUI architecture:

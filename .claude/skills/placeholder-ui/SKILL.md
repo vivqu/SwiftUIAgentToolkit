@@ -9,12 +9,14 @@ Use this skill whenever you're building a prototype screen that needs images. Pr
 
 ## Decision guide
 
-| Need                         | Approach                                              |
-|------------------------------|-------------------------------------------------------|
-| Person / avatar              | Bundled avatar — ask user which style (see Step 1)    |
-| Product, hero, or landscape  | Bundled image if available → picsum fallback          |
-| Category or action indicator | SF Symbol (see reference below)                       |
-| Loading / skeleton state     | `.redacted(reason: .placeholder)`                     |
+| Need | Approach |
+| --- | --- |
+| Person / avatar | Bundled avatar — ask user which style (see Step 1) |
+| Product card | Bundled product image (`product-1` to `product-10`) |
+| Hero / banner | Bundled hero image (nature or architecture subcategory) |
+| Background / decorative | Bundled abstract image (`abstract-1` to `abstract-6`) |
+| Category or action indicator | SF Symbol (see reference below) |
+| Loading / skeleton state | `.redacted(reason: .placeholder)` |
 
 ## Step 1 — Discover available images
 
@@ -28,9 +30,8 @@ After reading the README, if the category has more than one style (e.g. avatars 
 
 > There are two avatar styles available:
 >
-> - **Illustrated** (`placeholder-avatar-illustrated-1` … `placeholder-avatar-illustrated-6`) — cartoon personas
-> - **Photo** (`placeholder-avatar-1` … `placeholder-avatar-3`) — realistic portraits
->
+> - **Illustrated** (`avatar-illustrated-1` to `avatar-illustrated-6`) — cartoon personas
+> - **Photo** (`avatar-1` to `avatar-6`) — realistic portraits
 >
 > Which style would you like to use?
 
@@ -50,8 +51,8 @@ For each image you want to use:
 3. Copy the source image into that folder:
 
    ```bash
-   cp assets/placeholder-images/avatars/placeholder-avatar-illustrated-1.png \
-      YourApp/Assets.xcassets/placeholder-avatar-illustrated-1.imageset/
+   cp assets/placeholder-images/avatars/avatar-illustrated-1.png \
+      YourApp/Assets.xcassets/avatar-illustrated-1.imageset/
    ```
 
 4. Write `Contents.json` in the imageset folder using the template at `references/imageset-contents.json`, substituting the actual filename
@@ -62,12 +63,12 @@ Repeat for each image needed. The project uses `PBXFileSystemSynchronizedRootGro
 
 ```swift
 // Bundled image
-Image("placeholder-avatar-illustrated-1")
+Image("avatar-illustrated-1")
     .resizable()
     .aspectRatio(contentMode: .fill)
 
 // Bundled avatar in a circle
-Image("placeholder-avatar-illustrated-1")
+Image("avatar-illustrated-1")
     .resizable()
     .aspectRatio(contentMode: .fill)
     .frame(width: 80, height: 80)
