@@ -4,6 +4,21 @@ Decision history for the SwiftUIAgentToolkit repository.
 
 ---
 
+## 2026-03-16
+
+Added placeholder UI assets for prototyping
+
+- Created `assets/placeholder-images/` with category subfolders (`avatars/`, `heroes/`, `products/`, `abstracts/`)
+- Added 6 illustrated avatar images from [Personas by Draftbit](https://personas.draftbit.com/)
+- Created `assets/placeholder-images/README.md` with naming convention and sources
+- Added `.claude/skills/placeholder-ui/` skill with decision guide, asset import steps, SwiftUI snippets, and SF Symbols reference
+- Added `references/imageset-contents.json` template for creating Xcode imagesets
+- Updated `CLAUDE.md` with a Prototyping section pointing to the skill
+- Updated `docs/SETUP.md` to mention placeholder assets in the setup flow
+- Added `TestSwiftUIApp/.claude/CLAUDE.md` explaining the test app is not git-tracked and how to revert changes
+
+---
+
 ## 2026-03-15
 
 Initial Setup
@@ -46,5 +61,6 @@ Migrated to `ios-verify-ui` plugin
 - Published verify skills as a standalone Claude Code plugin at [vivqu/claude-swift-verify-ui-plugin](https://github.com/vivqu/claude-swift-verify-ui-plugin)
 - Removed `.claude/skills/` directory (verify-ui, verify-test, verify, and shared session setup)
 - Updated `CLAUDE.md` to reference plugin commands (`/ios-verify-ui:verify-ui`, `/ios-verify-ui:verify-test`, `/ios-verify-ui:verify`) and include install instructions
+- Added a skill for the Xcode bridge MCP tool
 
 Updated the README

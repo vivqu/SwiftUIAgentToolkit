@@ -40,6 +40,17 @@ claude plugin add https://github.com/vivqu/claude-swift-verify-ui-plugin
 - `/ios-verify-ui:verify-test` — Run the unit and UI test suite and report pass/fail results. Use after adding or changing logic with tests.
 - `/ios-verify-ui:verify` — Full verification: runs both UI and test checks in sequence and reports a combined summary. Use when you want to confirm everything is working end to end.
 
+## Prototyping
+
+When building prototype screens that need images, use the `/placeholder-ui` skill. It provides:
+
+- Bundled placeholder images in `assets/placeholder-images/` (avatars, heroes, products, abstracts)
+- Step-by-step instructions for importing images into `Assets.xcassets`
+- SwiftUI snippets for common patterns (avatar, card image, skeleton state)
+- SF Symbol reference for prototype icons
+
+Prefer bundled images over network calls (`AsyncImage` + picsum) — they work offline and are semantically appropriate.
+
 ## Internal Development
 
 - **`docs/internal-dev/` is used for storing plans for improvement of the SwiftUIAgentToolkit. It is not tracked by git and will not be published to the template.

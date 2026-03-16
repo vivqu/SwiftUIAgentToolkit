@@ -81,7 +81,11 @@ Install in the Cursor global user config at `~/.cursor/mcp.json`. This will enab
 
 Restart Cursor to pick it up. Verify the connection in **Cursor → Settings → MCP** — XcodeBuildMCP should appear with a green checkmark.
 
-2. Install the `ios-verify-ui` plugin
+2. Install placeholder UI assets
+
+The toolkit includes curated placeholder images for prototyping in `assets/placeholder-images/`. When building screens that need images, invoke the `/placeholder-ui` skill — it guides the agent through importing images into your `Assets.xcassets` and using them in SwiftUI.
+
+3. Install the `ios-verify-ui` plugin
 
 This plugin provides the `/ios-verify-ui:verify-ui`, `/ios-verify-ui:verify-test`, and `/ios-verify-ui:verify` commands used to verify your app after code changes.
 
