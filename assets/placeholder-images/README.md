@@ -8,6 +8,9 @@ Curated images for use in Swift prototypes. Drop images into the appropriate cat
 | -------- | ----- | ----- | ------- |
 | Avatar / portrait (illustrated) | `placeholder-avatar-illustrated-1.png` … `placeholder-avatar-illustrated-6.png` | 6 | Profile photos, user avatars, social UI |
 | Avatar / portrait (photo) | `placeholder-avatar-1.jpg` … `placeholder-avatar-3.jpg` | 3 | Realistic profile photos, social UI |
+| Product | `placeholder-product-1.jpg` … | 0 | Product cards, shop listings — use picsum fallback until populated |
+| Hero / banner | `placeholder-hero-1.jpg` … | 0 | Full-width headers, feature banners — use picsum fallback until populated |
+| Abstract / background | `placeholder-abstract-1.jpg` … | 0 | Decorative backgrounds, cards — use picsum fallback until populated |
 
 ## Rules
 
@@ -26,5 +29,8 @@ Images have been minified using [TinyPNG](https://tinypng.com/).
 
 ```none
 assets/placeholder-images/
-└── avatars/
+├── avatars/      ← illustrated + photo portrait images
+├── products/     ← product card images (empty — use picsum fallback)
+├── heroes/       ← full-width banner images (empty — use picsum fallback)
+└── abstracts/    ← decorative background images (empty — use picsum fallback)
 ```
